@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+</head>
+<body>
+    <header>
+        <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px;">
+            <i class='bx bx-left-arrow-circle'></i> 
+        </a>
+
+        <div class="link">
+        <div><a href="#"><i class='bx bx-search-alt' style="z-index: 10; font-size: 240%;"></i></a></div>
+        <a class="login" href="../login/login.html"> Log in</a>
+        <a class="signup" href="../signup/signup.html"> Sign up </a>
+        
+        </div>
+        
+            <input type="text" class="search" name="search" placeholder="ค้นหา">
+    
+    </header>
+    <main>
+        <div  class="box-out">
+        
+            <div class="box" style="font-size: xxx-large; "> Profile <br>
+                    <img src="human.png" style="height: 200px; width: 200px;">
+                    <div class="ctprofile">
+                    <div class="editable-container">
+                        <label>รหัสนักศึกษา:</label>
+                        <span id="id-display"></span>
+                        <span class="edit-icon" onclick="editText('id')">✏️</span>
+                    </div>
+                
+                    <div class="editable-container">
+                        <label>ชื่อ:</label>
+                        <span id="name-display"></span>
+                        <span class="edit-icon" onclick="editText('name')">✏️</span>
+                    </div>
+                
+                    <div class="editable-container">
+                        <label>สาขา:</label>
+                        <span id="major-display"></span>
+                        <span class="edit-icon" onclick="editText('major')">✏️</span>
+                    </div>
+                
+                    <div class="editable-container">
+                        <label>คณะ:</label>
+                        <span id="faculty-display"></span>
+                        <span class="edit-icon" onclick="editText('faculty')">✏️</span>
+                    </div>
+                
+                    <div class="editable-container">
+                        <label>ปีการศึกษา:</label>
+                        <span id="year-display"></span>
+                        <span class="edit-icon" onclick="editText('year')">✏️</span>
+                    </div>
+                
+                    <div class="editable-container">
+                        <label>Email:</label>
+                        <span id="email-display" class="email-text"></span> <!-- ไม่ให้แก้ไข -->
+                    </div>
+                
+                    <script>
+                        // กำหนดค่าเริ่มต้น
+                        const defaultValues = {
+                            id: "64010101",
+                            name: "สมชาย ใจดี",
+                            major: "วิศวกรรมคอมพิวเตอร์",
+                            faculty: "วิศวกรรมศาสตร์",
+                            year: "ปี 3",
+                            email: "somchai@email.com" // อีเมลไม่ให้แก้ไข
+                        };
+                
+                        function loadData() {
+                            Object.keys(defaultValues).forEach(field => {
+                                let value = localStorage.getItem(field) || defaultValues[field];
+                                document.getElementById(`${field}-display`).innerText = value;
+                            });
+                        }
+                
+                        function editText(field) {
+                            if (field === "email") return; // ห้ามแก้ไข email
+                
+                            let currentValue = document.getElementById(`${field}-display`).innerText;
+                            let newValue = prompt(`แก้ไข ${field}:`, currentValue);
+                
+                            if (newValue !== null && newValue.trim() !== "") {
+                                document.getElementById(`${field}-display`).innerText = newValue;
+                                localStorage.setItem(field, newValue);
+                            }
+                        }
+                
+                        // โหลดข้อมูลเมื่อเปิดหน้าเว็บ
+                        document.addEventListener("DOMContentLoaded", loadData);
+                    </script>
+                </div>
+            </div>     
+        </div>
+                
+    </main>
+    <footer>
+        <div class="menu">
+            <div><a href="../homepage/homepage.html"><i class='bx bx-home' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../bookmark/bookmark.html"><i class='bx bx-heart' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../class/class.html"><i class='bx bx-duplicate' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../friend/friend.html"><i class='bx bx-group' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../profile/profile.html"><i class='bx bx-user' style="z-index: 10; font-size: 300%; filter: drop-shadow( 2px 2px 3px rgba(255,137,167,1)) drop-shadow( -2px -2px 3px rgba(255,137,167,1));"></i></a></div>
+            <div><a href="../setting/setting.html"><i class='bx bxs-grid' style="z-index: 10; font-size: 300%;"></i></a></div>
+        </dev>
+    </footer>
+</body>
+</html>

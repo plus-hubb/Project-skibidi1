@@ -1,0 +1,159 @@
+body, html{
+    background-color:#FCEFBE;
+    margin: 0;
+    padding: 0;
+}
+header {
+
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    
+}
+
+.search {
+        height: 40px;
+        width: 60%;
+        position: absolute;
+        bottom: 25%;
+        margin-left: 13%;
+        background-color: #FF89A7;
+        border-radius: 30px;
+        border: solid 1px #A44059 ;
+        outline: none;
+        padding-left: 2%;
+        color: white;
+        font-size: 18px;
+        
+}
+.search::placeholder {
+    color:white; /* เปลี่ยนเป็นสีที่ต้องการ */
+    font-size: 18px; /* กำหนดขนาดตัวอักษร */
+  }
+
+  .box-out {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 51px;
+    margin: 170px 25px;
+    position: relative;
+    
+
+
+}
+.box {
+    min-height: 56vh;
+    height: auto;
+    width: 104vw;
+    background-color: #94C696;
+    border: none;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: xx-large;
+    padding-left: 30px;
+    padding-top: 10px;
+    font-family: system-ui;
+}
+    
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    
+}
+.login {
+    margin: 0vw;
+}
+.signup {
+    color: #94C696;
+}
+.link {
+    margin-left: 90%;
+    margin-top: 4vh;
+    display: flex;
+    gap: 25px;
+    font-size: medium;
+    color: black;
+
+}
+
+.menu {
+    display: flex;
+    gap: 13.5%;
+    margin-left: 8%;
+    padding :1%
+}
+a {
+    font-family: system-ui;
+    color: #FF89A7;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+
+}
+
+
+.bx.bx-search-alt {
+    position: absolute;
+    left: 77%;
+    top: 32%;
+    color: #A44059; 
+}
+
+.bx-minus-circle {
+    font-size: 40px;
+    color: red;
+}
+.bx-check-circle {
+    font-size: 40px;
+    color: aliceblue;
+    
+    
+}
+
+.request-container {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    margin-left: 10px;
+  }
+
+  .btn:hover {
+    opacity: 0.7;
+  }
+
+  .request-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ถ้าไม่ต้องการให้ชิดซ้ายทั้งหมด */
+    width: 96%; /* ให้ขยายเต็มกล่อง */
+    padding: 10px;
+  }
+  
+  .request-container span {
+    flex-grow: 1; /* ให้ชื่อขยายพื้นที่ผลักปุ่มไปทางขวา */
+  }
+  
+  .request-container .btn {
+    margin-left: 8px; /* ปรับระยะห่างระหว่างปุ่ม */
+    cursor: pointer;
+  }
+.bx-user {
+    color: #FF89A7;
+}

@@ -1,0 +1,221 @@
+body, html{
+    background-color:#FCEFBE;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+
+}
+header {
+
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    
+}
+
+.search {
+        height: 40px;
+        width: 60%;
+        position: absolute;
+        bottom: 25%;
+        margin-left: 13%;
+        background-color: #FF89A7;
+        border-radius: 30px;
+        border: solid 1px #A44059 ;
+        outline: none;
+        padding-left: 2%;
+        color: white;
+        font-size: 18px;
+        
+}
+.search::placeholder {
+    color:white; /* เปลี่ยนเป็นสีที่ต้องการ */
+    font-size: 18px; /* กำหนดขนาดตัวอักษร */
+  }
+footer {
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    
+}
+.login {
+    margin: 0vw;
+}
+.signup {
+    color: #94C696;
+}
+.link {
+    margin-left: 90%;
+    margin-top: 4vh;
+    display: flex;
+    gap: 25px;
+    font-size: medium;
+    color: black;
+
+}
+
+.menu {
+    display: flex;
+    gap: 13.5%;
+    margin-left: 8%;
+    padding :1%
+}
+a {
+    font-family: system-ui;
+    color: #FF89A7;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+
+}
+
+
+.bx.bx-search-alt {
+    position: absolute;
+    left: 77%;
+    top: 32%;
+    color: #A44059;
+}
+
+.green {
+    height: 200px;
+    width: 200px;
+    background-color: #94C696;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    margin-left:200px ;
+    border: none;
+    margin-top: 200px;
+    position: fixed;
+}
+
+.white {
+    height: 150px;
+    width: 150px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+    position: absolute;
+    left: 225px;
+    top: 225px;
+    font-size: medium;
+    color: #94C696;
+}
+.bx-plus-circle {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #FF89A7;
+    font-weight: 300;
+}
+.boxout {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+
+.greenbox {
+    height: 180px;
+    width: 200px;
+    background-color: #94C696;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+   
+    border: none;
+    padding-bottom: 25px;
+    position: relative;
+    
+   
+}
+.whitebox {
+    height: 150px;
+    width: 150px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: none;
+    font-size: medium;
+    color: #94C696;
+    margin-left: 25px;
+    margin-top: 27px;    
+    
+}
+
+.bx-x {
+    color: red;
+    position: absolute;
+    left: 80px;
+    top: 171px;
+    font-size: 40px;
+   
+}
+
+.box {
+    margin-left:450px ;
+    margin-top:200px ;
+}
+
+.popupdelete {
+    background-color: #FF89A7; 
+    border: none;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: xx-large;
+    font-family: system-ui;
+    text-align: center;
+    
+    width: 70vw;
+    height: 40vh;
+    pointer-events: auto; /* ให้ป๊อปอัพยังคลิกได้ */
+    position: relative;
+    z-index: 76;
+}
+.popup-overlay {
+    display: none;
+     position: fixed; 
+     top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+     align-items: center;
+     z-index: 77;
+}
+.buttonyes {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: xx-large;
+    font-family: system-ui;
+    width: 8vw;
+    height: 7vh;
+    color: #94C696;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+.buttonno {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: xx-large;
+    font-family: system-ui;
+    width: 8vw;
+    height: 7vh;
+    color: #FF89A7;
+    position: absolute;
+    right: 200px;
+    bottom: 30px;
+}

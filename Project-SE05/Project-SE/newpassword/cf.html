@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cf password</title>
+    <link rel="stylesheet" href="cf.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+        }
+        a:hover {
+            color: #BDB4C4;
+        }
+        a:active {
+            color: #BDB4C4;
+        }
+        
+        .small-text {
+            font-size: 12px;
+        }
+
+        p {
+            margin-bottom: 0.5%;
+        }
+
+        button {
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+                
+        <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px; color: #FF89A7;">
+            <i class='bx bx-left-arrow-circle'></i> 
+        </a>
+    </header>
+    <main>
+        <div class="boxgreen">
+            <form action="../newpassword/newpassword.html" onsubmit="return validateForm()">
+
+            <h3><font color="white" style="font-size: x-large;">ยืนยันรหัสผ่าน</font></h3><br>
+
+            <p><input type="text" class="inputemail" name="email" placeholder="ยืนยันรหัส" required></p>
+
+            <p class="small-text">*กรุณาใส่ ใส่รหัสผ่านที่ได้รับจาก Email ของคุณ*</p>
+
+        
+
+            <br>
+
+            <button class="buttonsurepass" type="submit"> ยืนยัน </button>
+
+            <br>
+        </form>
+
+           
+
+            
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>

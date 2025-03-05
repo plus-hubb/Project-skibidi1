@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>friend</title>
+    <link rel="stylesheet" href="friend.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+</head>
+<body>
+    <header>
+      <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px;">
+        <i class='bx bx-left-arrow-circle'></i> 
+    </a>
+        <div class="link">
+        <div><a href="#"><i class='bx bx-search-alt' style="z-index: 10; font-size: 240%;"></i></a></div>
+        <a class="login" href="../login/login.html"> Log in</a>
+        <a class="signup" href="../signup/signup.html"> Sign up</a>
+        
+        </div>
+        
+            <input type="text" class="search" name="search" placeholder="ค้นหา">
+    
+    </header>
+    <main>
+        <div  class="box-out">
+            
+            <div class="box"> <p style="margin-left: 30px;">เพื่อน</p>
+              <i class='bx bxs-group'></i>
+                <input type="text" class="searchfriend" name="search" placeholder="ค้นหา"><div><a href="#"><i class='bx bx-search-alt' style="z-index: 10; font-size: 240%; position: absolute;
+                top: 90px;"></i></a></div>
+                
+                <div id="friend-list"></div>
+
+                <button class="request" onclick="window.location.href='request.html'"> คำขอเป็นเพื่อน</button>
+              
+                <!-- Popup Confirmation -->
+                <div class="overlay" id="overlay"></div>
+                <div class="popup" id="popup">
+                  <p style="color: rgb(255, 255, 255);">คุณแน่ใจหรือไม่ว่าต้องการลบเพื่อนคนนี้?</p>
+                  <button class="confirm" id="confirmDelete">ยืนยัน</button>
+                  <button class="cancel" id="cancelDelete">ยกเลิก</button>
+                </div>
+                   
+                      </div>
+                
+            </div>
+            
+                
+    </main>
+    <footer>
+        <div class="menu">
+            <div><a href="../homepage/homepage.html"><i class='bx bx-home' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../bookmark/bookmark.html"><i class='bx bx-heart' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../class/class.html"><i class='bx bx-duplicate' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../friend/friend.html"><i class='bx bx-group' style="z-index: 10; font-size: 300%; filter: drop-shadow( 2px 2px 3px rgba(255,137,167,1)) drop-shadow( -2px -2px 3px rgba(255,137,167,1));"></i></a></div>
+            <div><a href="../profile/profile.html"><i class='bx bx-user' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../setting/setting.html"><i class='bx bxs-grid' style="z-index: 10; font-size: 300%;"></i></a></div>
+        </dev>
+    </footer>
+    <script>
+        let deleteIndex = null;
+    
+        function displayFriends() {
+          const friends = JSON.parse(localStorage.getItem('friends')) || [];
+          const friendListContainer = document.getElementById('friend-list');
+          friendListContainer.innerHTML = '';
+    
+          if (friends.length === 0) {
+            friendListContainer.innerHTML = '<p>ยังไม่มีเพื่อนที่ถูกยอมรับ</p>';
+          } else {
+            friends.forEach((friend, index) => {
+              const friendContainer = document.createElement('div');
+              friendContainer.classList.add('friend-container');
+              
+              const friendText = document.createElement('span');
+              friendText.innerHTML = '<i class="bx bx-user"></i> ' + friend;
+    
+              const removeBtn = document.createElement('button');
+              removeBtn.classList.add('btn');
+              removeBtn.innerHTML = '<i class="bx bx-minus-circle"></i>';
+              removeBtn.addEventListener('click', function() {
+                showPopup(index);
+              });
+    
+              friendContainer.appendChild(friendText);
+              friendContainer.appendChild(removeBtn);
+              friendListContainer.appendChild(friendContainer);
+            });
+          }
+        }
+    
+        function showPopup(index) {
+          deleteIndex = index;
+          document.getElementById('popup').style.display = 'block';
+          document.getElementById('overlay').style.display = 'block';
+        }
+    
+        function hidePopup() {
+          document.getElementById('popup').style.display = 'none';
+          document.getElementById('overlay').style.display = 'none';
+        }
+    
+        function removeFriend() {
+          let friends = JSON.parse(localStorage.getItem('friends')) || [];
+          if (deleteIndex !== null) {
+            friends.splice(deleteIndex, 1); // ลบรายการ
+            localStorage.setItem('friends', JSON.stringify(friends));
+            displayFriends();
+            hidePopup();
+          }
+        }
+    
+        // Event Listeners
+        document.getElementById('confirmDelete').addEventListener('click', removeFriend);
+        document.getElementById('cancelDelete').addEventListener('click', hidePopup);
+    
+        window.onload = displayFriends;
+      </script>
+    
+</body>
+</html>

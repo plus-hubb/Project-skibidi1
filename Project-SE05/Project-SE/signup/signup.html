@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+<body>
+    <header>
+        
+    </header>
+
+    <main>
+        <form action="../homepage/homepage.html" onsubmit="return validateForm()">
+        <div class="boxgreen">
+           
+                <p style="color: white; font-size: xx-large; font-family: system-ui ; margin-bottom: -90px;">Sigh up</p>
+                <input type="text" class="inputname" name="name" placeholder="ชื่่อ-นามสกุล" required>
+
+                <input type="email" class="inputemail" name="email" placeholder="E-mail" required>
+
+                <input type="password" class="inputpassword" name="password" placeholder="Password" required>
+
+                <button class="buttonsighin" type="submit"> Sign up </button>
+           
+                <button class="buttonlogin" onclick="window.location.href='../login/login.html'"> Log in </button>
+            </form>
+            
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
+

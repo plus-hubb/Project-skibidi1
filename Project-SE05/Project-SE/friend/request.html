@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>request</title>
+    <link rel="stylesheet" href="request.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+</head>
+<body>
+    <header>
+      <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px;">
+        <i class='bx bx-left-arrow-circle'></i> 
+    </a>
+        <div class="link">
+        <div><a href="#"><i class='bx bx-search-alt' style="z-index: 10; font-size: 240%;"></i></a></div>
+        <a class="login" href="../login/login.html"> Log in</a>
+        <a class="signup" href="../signup/signup.html"> Sign up</a>
+        
+        </div>
+        
+            <input type="text" class="search" name="search" placeholder="ค้นหา">
+    
+    </header>
+    <main>
+        <div  class="box-out">
+            
+            <div class="box"> <p style="margin-left: 30px;">เพื่อน</p>
+                <div id="friend-requests"></div>
+                
+                
+            </div>
+            
+                
+    </main>
+    <footer>
+        <div class="menu">
+            <div><a href="../homepage/homepage.html"><i class='bx bx-home' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../bookmark/bookmark.html"><i class='bx bx-heart' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../class/class.html"><i class='bx bx-duplicate' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../friend/friend.html"><i class='bx bx-group' style="z-index: 10; font-size: 300%; filter: drop-shadow( 2px 2px 3px rgba(255,137,167,1)) drop-shadow( -2px -2px 3px rgba(255,137,167,1));"></i></a></div>
+            <div><a href="../profile/profile.html"><i class='bx bx-user' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../setting/setting.html"><i class='bx bxs-grid' style="z-index: 10; font-size: 300%;"></i></a></div>
+        </dev>
+    </footer>
+    <script>
+    const friendRequests = [
+    { user: 'User123', status: 'pending' },
+    { user: 'User456', status: 'pending' },
+    { user: 'User789', status: 'pending' }
+  ];
+
+  function displayRequests() {
+    document.getElementById('friend-requests').innerHTML = '';
+
+    friendRequests.forEach((request, index) => {
+      if (request.status === 'pending') {
+        const requestContainer = document.createElement('div');
+        requestContainer.classList.add('request-container');
+        
+        const userText = document.createElement('span');
+        userText.innerHTML = '<i class="bx bx-user"></i> ' + request.user;
+
+        const acceptBtn = document.createElement('button');
+        acceptBtn.classList.add('btn');
+        acceptBtn.innerHTML = '<i class="bx bx-check-circle"></i>';
+        acceptBtn.addEventListener('click', function() {
+          request.status = 'accepted';
+          saveRequests();
+          displayRequests();
+          addToFriends(request);
+        });
+
+        const declineBtn = document.createElement('button');
+        declineBtn.classList.add('btn');
+        declineBtn.innerHTML = '<i class="bx bx-minus-circle"></i>';
+        declineBtn.addEventListener('click', function() {
+          friendRequests.splice(index, 1);
+          saveRequests();
+          displayRequests();
+        });
+
+        requestContainer.appendChild(userText);
+        requestContainer.appendChild(acceptBtn);
+        requestContainer.appendChild(declineBtn);
+
+        document.getElementById('friend-requests').appendChild(requestContainer);
+      }
+    });
+  }
+
+  function saveRequests() {
+    localStorage.setItem('friendRequests', JSON.stringify(friendRequests));
+  }
+
+  function addToFriends(request) {
+    const friends = JSON.parse(localStorage.getItem('friends')) || [];
+    friends.push(request.user);
+    localStorage.setItem('friends', JSON.stringify(friends));
+  }
+
+  window.onload = displayRequests;
+</script>
+    
+</body>
+</html>

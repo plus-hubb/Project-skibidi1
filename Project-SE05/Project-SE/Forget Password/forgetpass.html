@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลืมรหัสผ่าน</title>
+    <link rel="stylesheet" href="forgetpass.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+        }
+        a:hover {
+            color: #BDB4C4;
+        }
+        a:active {
+            color: #BDB4C4;
+        }
+        
+        .small-text {
+            font-size: 12px;
+        }
+
+        p {
+            margin-bottom: 0.5%;
+        }
+
+        button {
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+                
+        <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px; color: #FF89A7;">
+            <i class='bx bx-left-arrow-circle'></i> 
+        </a>
+    </header>
+    <main>
+        <div class="boxgreen">
+            <form action="../newpassword/cf.html" onsubmit="return validateForm()">
+
+            <h3><font color="white" style="font-size: x-large;">ลืมรหัสผ่าน</font></h3><br>
+
+            <p><input type="text" class="inputemail" name="email" placeholder=" E-mail" required></p>
+
+            <p class="small-text">*กรุณาใส่ email ของคุณเราจะทำการส่งรหัสเพื่อยืนยันบัญชีผู้ใช้ของคุณ*</p>
+
+       
+
+            <br>
+
+            <button class="buttonsurepass" type="submit"> ยืนยัน </button>
+
+            <br>
+        </form>
+
+           
+
+            
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>

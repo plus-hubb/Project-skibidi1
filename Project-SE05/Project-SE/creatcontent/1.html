@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+     
+
+
+
+
+
+</head>
+<body>
+    <header>
+        <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px;">
+            <i class='bx bx-left-arrow-circle'></i> 
+        </a>
+        <div class="link">
+        <div><a href="#"><i class='bx bx-search-alt' style="z-index: 10; font-size: 240%;"></i></a></div>
+        <a class="login" href="../login/login.html"> Log in</a>
+        <a class="signup" href="../signup/signup.html"> Sign up</a>
+        
+        </div>
+        
+            <input type="text" class="search" name="search" placeholder="ค้นหา">
+    
+    </header>
+    <main>
+        <div class="boxgreen">
+            <form action="../maincontent/maincontent.html" onsubmit="return validateForm()">
+            <div class="boxout" style="margin-left: 200px;">
+            <div class="popup" id="popup">อัปโหลดจากอุปกรณ์</div>
+
+            <label for="nametopic" class="nametopic" style="font-size: x-large; font-weight: bold; display: block; margin-bottom: 5px;">ชื่อเนื้อหา</label>
+            <input id="nametopic" style="outline: none; font-size: small; padding: 10px; width: 100%; max-width: 400px; border: 2px solid #ffffff; border-radius: 5px;" class="nametopic" type="text" placeholder="กรอกชื่อเนื้อหา" required> 
+            <br><br>
+
+            <label for="namesubject" class="namesubject" style="font-size: x-large; font-weight: bold; display: block; margin-bottom: 5px;">ชื่อวิชา</label>
+            <input id="namesubject" style="outline: none; font-size: small; padding: 10px; width: 100%; max-width: 400px; border: 2px solid #ffffff; border-radius: 5px;" class="namesubject" type="text" placeholder="กรอกชื่อวิชา" required> 
+            <br><br>
+            
+            <button style="border: none; background: none; font-size: large; margin-top: 10px; margin-left: 5px; color: white;" class="share-btn" onclick="showPopup()">
+                <i class='bx bx-paperclip' style="font-size: 30px;"></i>เเนบ </button> <br>
+            <p style="font-size: x-large;">เลือกรูปเเบบการเข้าถึง</p> 
+
+            <label for="option-private">
+                <input type="radio" name="option" id="option-private" value="private" required> ส่วนตัว
+            </label> <br>
+
+            <label for="option-friend">
+                <input type="radio" name="option" id="option-friend" value="friend" required> เพื่อน
+            </label> <br>
+
+            <label for="option-public">
+                <input type="radio" name="option" id="option-public" value="public" required> สาธารณะ
+            </label><br>
+            
+            <p style="font-size: x-large;">เลือกรูปแบบการเข้าถึง</p> 
+            <label for="favorite">
+                <input type="checkbox" id="favorite" name="option" value="favorite"> อนุญาตให้เพิ่มรายการโปรด
+            </label><br>
+            <label for="comment">
+                <input type="checkbox" id="comment" name="option" value="comment"> อนุญาตให้คอมเมนท์
+            </label><br>
+            
+            <script>
+            function toggleCheckboxes() {
+                let isPrivate = document.getElementById("option-private").checked;
+                document.getElementById("favorite").disabled = isPrivate;
+                document.getElementById("comment").disabled = isPrivate;
+            }
+
+                document.getElementById("option-private").addEventListener("change", toggleCheckboxes);
+                document.getElementById("option-friend").addEventListener("change", toggleCheckboxes);
+                document.getElementById("option-public").addEventListener("change", toggleCheckboxes);
+            </script>
+
+            </div>
+            <a    href="javascript:history.back() " style="color: white; font-size: xx-large;position: absolute; left: 30px; top: 540px; text-decoration: none; background: #d9534f;  border-radius: 10px;">
+                ยกเลิก
+            </a>
+            <button type="submit"  style="color: white; font-size: xx-large;position: absolute; left: 670px; top: 540px; border: none; background: #5cb85c; border-radius: 10px; cursor: pointer;">
+                สร้าง
+            </button>
+            </form>
+        </div>
+            
+        
+    </main>
+    <footer>
+        <div class="menu">
+            <div><a href="../homepage/homepage.html"><i class='bx bx-home' style="z-index: 10; font-size: 300%;  filter: drop-shadow( 2px 2px 3px rgba(255,137,167,1)) drop-shadow( -2px -2px 3px rgba(255,137,167,1));"></i></a></div>
+            <div><a href="../bookmark/bookmark.html"><i class='bx bx-heart' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../class/class.html"><i class='bx bx-duplicate' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../friend/friend.html"><i class='bx bx-group' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../profile/profile.html"><i class='bx bx-user' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../setting/setting.html"><i class='bx bxs-grid' style="z-index: 10; font-size: 300%;"></i></a></div>
+        </dev>
+    </footer>
+
+
+    <script>
+        function showPopup() {
+    let popup = document.getElementById("popup");
+    popup.style.display = "block";
+}
+
+document.getElementById("popup").addEventListener("click", function() {
+    this.style.display = "none";
+});
+
+    </script>
+</body>
+</html>

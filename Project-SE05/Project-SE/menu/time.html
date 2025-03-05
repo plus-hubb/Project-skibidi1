@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+    <link rel="stylesheet" href="time.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <a href="javascript:history.back()" class="back-button" style="font-size: 50px; position: absolute; left: 80px; top: 20px;">
+            <i class='bx bx-left-arrow-circle'></i> 
+        </a>
+        <div class="link">
+        <div><a href="#"><i class='bx bx-search-alt' style="z-index: 10; font-size: 240%;"></i></a></div>
+        <a class="login" href="../login/login.html"> Log in</a>
+        <a class="signup" href="../signup/signup.html"> Sign up </a>
+        
+        </div>
+        
+            <input type="text" class="search" name="search" placeholder="ค้นหา">
+    
+    </header>
+    <main>
+        <div class="content">
+            <div class="pp" style="min-height: 8vh;
+            width: 12vw;
+            text-align: center;
+            align-content: center;
+            background-color: #94C696;
+            border: none;
+            border-radius: 20px;
+            box-shadow:  4px 6px rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: xx-large;
+            position: fixed;
+            top: 195px;
+            left: 100px;
+            "> ล่าสุด</div>
+            <div class="box-out">
+
+                
+                    <div class="menu-btn" onclick="toggleMenu()" id="menuBtn">
+                        <i class='bx bx-menu' id="menuIcon"></i>
+                    </div>
+                    
+                    <div class="menu-popup" id="menuPopup">
+                        <div class="menu">
+                            <button class="boxp" onclick="window.location.href='../menu/popular.html'"> ยอดนิยม</button>
+                        </div>
+                    
+                        <div class="menu">
+                            <button class="boxtime" onclick="window.location.href='../menu/time.html'"> ล่าสุด</button>
+                        </div>
+                    
+                        <div class="menu">
+                            <button class="boxcreat" onclick="window.location.href='../creatcontent/1.html'"> เพิ่มเนื้อหา</button>
+                        </div>  
+                    
+                        <div class="menu">
+                            <button class="boxmy" onclick="window.location.href='../menu/my.html'"> เนื้อหาของฉัน</button>
+                        </div> 
+                    </div>
+
+                    
+                <div class="boxout1">
+                <div class="boxout2">
+                    <button class="box" onclick="window.location.href='../content/content.html'"></button>
+                        <div class="popup" id="popup">คัดลอกลิงก์</div>
+        
+                    <img src="book.jpg" style="height: 150px; width: 150px; position: absolute; left: 20px; top: 20px; border-radius: 20px;">
+                    <div class="content">
+                        <p>วิชา ภาษาไทย</p>
+                        <p>เรื่อง เเม่ก.กา</p>
+                        <p>สาธารณะ</p>
+                        <p>view 100</p>
+                    </div>
+                    <button class="share-btn" onclick="showPopup()">
+                        <i class='bx bx-share'></i> </button> 
+                        <i class='bx bx-heart' id="heart1" ></i>
+
+                       
+
+
+                        <div class="boxout2">
+                            <button class="box" onclick="window.location.href='../content/content.html'"></button>
+                                <div class="popup" id="popup">คัดลอกลิงก์</div>
+                            </button>
+                            <img src="book.jpg" style="height: 150px; width: 150px; position: absolute; left: 20px; top: 20px; border-radius: 20px;">
+                            <div class="content">
+                                <p>วิชา ภาษาไทย</p>
+                                <p>เรื่อง เเม่ก.กา</p>
+                                <p>สาธารณะ</p>
+                                <p>view 100</p>
+                            </div>
+                            <button class="share-btn" onclick="showPopup()">
+                                <i class='bx bx-share'></i> </button> 
+                                <i class='bx bx-heart' id="heart2" ></i>
+
+                                
+                                <button class="comment-btn" onclick="toggleCommentPopup()" id="commentToggle">
+                                    <i class='bx bx-message-square-dots' id="commentIcon"></i>
+                                </button>
+                                
+                        </div>
+                        
+                    </div>
+
+
+
+                    <script>
+                        // ใช้ id ต่างกันสำหรับไอคอนแต่ละอัน
+                        const heartIcons = ['heart1', 'heart2'];
+                    
+                        heartIcons.forEach(id => {
+                            const heartIcon = document.getElementById(id);
+                            heartIcon.addEventListener('click', function() {
+                                heartIcon.classList.toggle('bx-heart');
+                                heartIcon.classList.toggle("bxs-heart");
+                                heartIcon.classList.toggle('color');
+                            });
+                        });
+                    </script>
+
+                        
+
+                        
+
+
+                            <button class="comment-btn" onclick="toggleCommentPopup()" id="commentToggle">
+                                <i class='bx bx-message-square-dots' id="commentIcon"></i>
+                            </button>
+
+                        
+                        
+                            
+
+                            <div class="comment-popup" id="commentPopup">
+
+                                <div class="popup-header">
+                                    <i class='bx bx-user'></i>
+                                    <p>ความคิดเห็นจากผู้ใช้:</p>
+                                </div>
+
+                                <div class="popup-content">
+                                    <div class="comment">
+                                        <i class='bx bx-user'></i>
+                                        <p>สมศรี มีแมวเป้า : สรุปได้เข้าใจมากค่ะะ</p>
+                                    </div>
+
+                                    <div class="comment">
+                                        <i class='bx bx-user'></i>
+                                        <p>สมชาย ใจดี: good</p>
+                                    </div>
+
+                                    <div class="comment">
+                                        <i class='bx bx-user'></i>
+                                        <p>สมหมาย หล่อเหลา : ขอบคุณครับ</p>
+                                    </div>   
+                                </div>
+
+                                <div class="popup-footer">
+                                    <textarea placeholder="เเสดงความคิดเห็น..."></textarea>
+                                </div>
+                            </div> 
+                            
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="menu">
+            <div><a href="../homepage/homepage.html"><i class='bx bx-home' style="z-index: 10; font-size: 300%; filter: drop-shadow( 2px 2px 3px rgba(255,137,167,1)) drop-shadow( -2px -2px 3px rgba(255,137,167,1));"></i></a></div>
+            <div><a href="../bookmark/bookmark.html"><i class='bx bx-heart' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../class/class.html"><i class='bx bx-duplicate' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../friend/friend.html"><i class='bx bx-group' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../profile/profile.html"><i class='bx bx-user' style="z-index: 10; font-size: 300%;"></i></a></div>
+            <div><a href="../setting/setting.html"><i class='bx bxs-grid' style="z-index: 10; font-size: 300%;"></i></a></div>
+        </dev>
+    </footer>
+    <script>
+        function showPopup() {
+    let popup = document.getElementById("popup");
+    popup.style.display = "block";
+}
+
+document.getElementById("popup").addEventListener("click", function() {
+    this.style.display = "none";
+});
+
+
+
+
+
+
+
+
+function toggleCommentPopup() {
+    let popup = document.getElementById("commentPopup");
+    let icon = document.getElementById("commentIcon");
+
+    if (popup.style.display === "block") {
+        popup.style.display = "none";
+        icon.classList.remove("bxs-message-square-dots");
+        icon.classList.add("bx-message-square-dots");
+    } else {
+        popup.style.display = "block";
+        icon.classList.remove("bx-message-square-dots");
+        icon.classList.add("bxs-message-square-dots");
+    }
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let menuPopup = document.getElementById("menuPopup");
+    let menuBtn = document.getElementById("menuBtn");
+
+    function toggleMenu() {
+        if (menuPopup.style.display === "block") {
+            menuPopup.style.display = "none";
+        } else {
+            menuPopup.style.display = "block";
+        }
+    }
+
+    // ปิดเมนูเมื่อคลิกข้างนอก
+    document.addEventListener("click", function(event) {
+        if (!menuPopup.contains(event.target) && !menuBtn.contains(event.target)) {
+            menuPopup.style.display = "none";
+        }
+    });
+
+    menuBtn.addEventListener("click", function(event) {
+        event.stopPropagation(); // ป้องกัน event จากการคลิกข้างนอก
+        toggleMenu();
+    });
+});
+
+
+
+    </script>
+</body>
+</html>
